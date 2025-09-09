@@ -1,0 +1,494 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
+/* --- Reset global --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  background-color: #0e0e0e;
+  color: #f5f5f5;
+  line-height: 1.6;
+}
+
+/* --- Header --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: rgba(15, 15, 15, 0.8);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo img {
+  width: 140px;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* --- Navegación --- */
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #f5f5f5;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ff9800;
+}
+
+button {
+  border: none;
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  background: #ff9800;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #e67e22;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+}
+
+/* --- Hero (títulos) --- */
+section h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  -webkit-text-stroke: 1px #070b26;
+}
+
+section h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 300;
+  -webkit-text-stroke: 0.5px #070b26;
+}
+
+/* --- Fondo video --- */
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+/* --- Carrusel --- */
+.contendedor-carrousel-1,
+.contendedor-carrousel-2 {
+  position: relative;
+  width: 90%;
+  margin: 3rem auto;
+  overflow: hidden;
+}
+
+.motor-carrousel {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.item-carrousel {
+  min-width: 33.33%;
+  box-sizing: border-box;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-right: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-carrousel:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.4);
+}
+
+.item-carrousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.item-carrousel h4 {
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
+  text-align: center;
+  color: #f5f5f5;
+}
+
+/* --- Botones carrusel --- */
+.btn-izquierda-carrousel,
+.btn-derecha-carrousel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 2rem;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 50%;
+  z-index: 5;
+  transition: background 0.3s ease;
+}
+
+.btn-izquierda-carrousel:hover,
+.btn-derecha-carrousel:hover {
+  background-color: #ff9800;
+}
+
+.btn-izquierda-carrousel { left: 10px; }
+.btn-derecha-carrousel { right: 10px; }
+
+/**aqui empieza los estilos del formato de inicio de sesión**/
+.sesion {
+    color: blue;
+    text-align: center;
+    margin-top: 20px;
+    background: rgb(220, 217, 217);
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    background-color: #2f389f;
+}
+
+.boton2:hover {
+    background-color: #1c258b;
+}
+
+.boton2 {
+    padding: 10px, 20px;
+    border-radius: 5px;
+    background-color: rgb(109, 106, 158);
+    color: #fffafa;
+    font-style: bold;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+}
+button {
+    padding: 10px, 20px;
+    border-radius: 5px;
+    background-color: rgb(114, 120, 164);
+    color: #f7f7ff;
+    font-style: bold;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    width: 100px;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.boton-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+input{
+    border-radius: 5px;
+    border-style: none;
+}
+/**aqui termina**/
+
+/**aqui empieza los estilos del formato de inicio de sesión**/
+.registro{
+    opacity: 0.9;
+    color: blue;
+    text-align: center;
+    margin-top: 20px;
+    background: rgb(220, 217, 217);
+    padding: 30px;
+    border-radius: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+/**aqui termina**/
+
+/* --- Footer --- */
+footer {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(15,15,15,0.8);
+  color: #bbb;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+.site-footer {
+    background-color: #fff;
+    color: #000;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    border-top: 1px solid #e0e0e0;
+}
+.site-footer img {
+  width: 40px;
+
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.footer-brand h2 {
+    margin-bottom: 3rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 50px;
+}
+
+.footer-social {
+    
+    gap: 15px;
+    align-items: last baseline;
+    margin-top: 10px;
+}
+
+.footer-social a {
+    color: #000;
+    font-size: 1.2rem;
+    transition: color 0.3s;
+    margin: 0.5rem ;
+}
+
+.footer-social a:hover {
+    color: #555;
+}
+
+.footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column h3 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 8px;
+}
+
+.footer-column ul li a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-brand {
+        margin-bottom: 20px;
+    }
+    
+    .footer-social {
+        margin-bottom: 20px;
+    }
+    
+    .footer-links {
+        justify-content: center;
+        text-align: left;
+        gap: 30px;
+    }
+}
+
+/* --- Aside: Productos mejor valorados --- */
+.productos-mejor-valorados {
+  flex: 1 1 30%;
+  max-width: 300px;
+  margin: 20px auto;
+  font-family: Arial, sans-serif;
+}
+
+/* Caja del aside */
+.productos-mejor-valorados details {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  overflow: hidden;
+}
+
+/* Botón desplegable */
+.productos-mejor-valorados summary {
+  cursor: pointer;
+  padding: 12px;
+  font-weight: bold;
+  font-size: 1.1em;
+  background: rgba(0,0,0,0.2);
+  transition: background 0.3s;
+  color: #fff;
+  list-style: none; /* quita el triangulito por defecto en algunos navegadores */
+}
+
+.productos-mejor-valorados summary:hover {
+  background: rgba(0,0,0,0.4);
+}
+
+/* Contenido animado */
+.productos-mejor-valorados ul {
+  margin: 0;
+  padding: 10px 15px;
+  list-style: none;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  color: #fff;
+}
+
+.productos-mejor-valorados details[open] ul {
+  opacity: 1;
+  max-height: 500px; /* suficiente para mostrar la lista */
+}
+
+/* Estilos para los items */
+.productos-mejor-valorados li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Contenedor principal */
+#laptop-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Tarjeta individual */
+.laptop-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+.laptop-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgb(0 0 0 / 0.15);
+}
+
+/* Imagen */
+.laptop-img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  background-color: #f9f9f9;
+}
+
+/* Título */
+.laptop-card h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem 0;
+  color: #1a73e8;
+}
+
+/* Texto descriptivo */
+.laptop-card p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  line-height: 1.3;
+}
+
+/* Precio destacado */
+.laptop-card .precio {
+  margin-top: auto;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #27ae60;
+}
+
+/* Responsive para móviles */
+@media (max-width: 480px) {
+  #laptop-lista {
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
+  }
+
+  .laptop-card {
+    padding: 0.75rem;
+  }
+
+  .laptop-img {
+    height: 150px;
+  }
+}

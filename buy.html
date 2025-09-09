@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./CSS/style.css" />
+  <title>NexusTech - Laptops</title>
+</head>
+
+<body>
+  <video muted autoplay loop src="./video/Fondo cibernetico.mp4"></video>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <a href="index.html"><img src="./img/Logo.png" alt="Logo NexusTech" /> </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="login.html">INICIAR</a></li>
+        <li><a href="signin.html">REGISTRARSE</a></li>
+        <li><a href="contact.html">CONTACTO</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Sección para mostrar laptops -->
+  <main class="layout">
+    <section id="laptops" class="laptops">
+      <h2>Catálogo de Laptops</h2>
+      <p>Explora nuestra selección de computadores portátiles.</p>
+
+      <!-- Botón para cargar laptops -->
+      <button id="btn-cargar">Mostrar laptops</button>
+
+      <!-- Contenedor donde se insertarán los laptops -->
+      <div id="laptop-lista" class="laptop-lista"></div>
+    </section>
+  </main>
+  <!-- Aside con productos mejor valorados -->
+    <aside class="productos-mejor-valorados">
+      <details>
+        <summary>⭐ Productos mejor valorados</summary>
+        <ul>
+          <li>📱 Smartphone X Pro</li>
+          <li>💻 Laptop Ultra Slim</li>
+          <li>🎧 Auriculares Inalámbricos</li>
+          <li>⌚ Smartwatch Series 5</li>
+          <li>📷 Cámara Pro 4K</li>
+        </ul>
+      </details>
+    </aside>
+  <footer>© 2025 NexusTech</footer>
+  <script src="./fetch.js"></script>
+</body>
+
+</html>
