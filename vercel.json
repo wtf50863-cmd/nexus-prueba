@@ -1,25 +1,6 @@
 {
-  "version": 2,
-  "builds": [
-    { "src": "conexion.js", "use": "@vercel/node" },
-    { "src": "CSS/**", "use": "@vercel/static" },
-    { "src": "JS/**", "use": "@vercel/static" },
-    { "src": "img/**", "use": "@vercel/static" },
-    { "src": "video/**", "use": "@vercel/static" },
-    { "src": "*.html", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/api/(.*)", "dest": "/conexion.js" },
-
-
-    { "src": "/(.*\\.(?:css|js|png|jpg|jpeg|svg|ico|map|mp4|webm))", "dest": "/$1" },
-
-    
-    { "src": "/(.*\\.html)", "dest": "/$1" },
-
-    
-    { "src": "/", "dest": "/index.html" }
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/api/:path*", "destination": "/api/:path*" }
   ]
 }
-
-

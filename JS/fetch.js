@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btnCargar.addEventListener("click", async () => {
     try {
       // Llama a tu API en Express/Mongoose
-      const res = await fetch("/api/pcs");
+      const res = await fetch("http://localhost:3000/api/pcs");
       const laptops = await res.json();
 
       // Limpia el contenedor antes de pintar
