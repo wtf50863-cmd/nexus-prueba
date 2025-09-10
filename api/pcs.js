@@ -1,50 +1,47 @@
-// conexion.js (o api/pcs.js si prefieres)
-import express from 'express';
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-import cors from 'cors';
+import mongoose from "mongoose";
 
-dotenv.config();
-const app = express();
-app.use(cors());
-app.use(express.json());
+const uri = process.env.MONGO_URI; // en Vercel lo configuras en "Environment Variables"
 
-// Conexión a Atlas
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-  .then(() => console.log('¡Conectado a MongoDB Atlas!'))
-  .catch(err => console.error('Error al conectar:', err));
-
-// Esquema y modelo
-const pcSchema = new mongoose.Schema({
+const LaptopSchema = new mongoose.Schema({
   nombre: String,
   marca: String,
   precio: Number,
   moneda: String,
+  img: String,
   especificaciones: {
     procesador: String,
     ram: String,
     almacenamiento: String,
     pantalla: String,
     grafica: String
-  },
-  img: String
-});
-const Pc = mongoose.model('Pc', pcSchema);
-
-// Rutas
-app.post('/api/pcs', async (req, res) => {
-  const pc = new Pc(req.body);
-  await pc.save();
-  res.json(pc);
+  }
 });
 
-app.get('/api/pcs', async (req, res) => {
-  const pcs = await Pc.find();
-  res.json(pcs);
-});
+let Laptop;
+try {
+  Laptop = mongoose.model("Laptop");
+} catch {
+  Laptop = mongoose.model("Laptop", LaptopSchema);
+}
 
-// 🚀 Exportar la app en vez de app.listen()
-export default app;
+export default async function handler(req, res) {
+  await mongoose.connect(uri);
+
+  if (req.method === "GET") {
+    const laptops = await Laptop.find();
+    res.status(200).json(laptops);
+  } else {
+    res.status(405).json({ error: "Método no permitido" });
+  }
+}
+
+
+export default function handler(req, res) {
+  res.status(200).json({ mensaje: "API funcionando 🚀" });
+}
+
+export default function handler(req, res) {
+  res.status(200).json([
+    { nombre: "Laptop ejemplo", precio: 1000, moneda: "USD" }
+  ]);
+}
