@@ -2,10 +2,21 @@
   "version": 2,
   "builds": [
     { "src": "conexion.js", "use": "@vercel/node" },
-    { "src": "index.html", "use": "@vercel/static" }
+    { "src": "index.html", "use": "@vercel/static" },
+    { "src": "app/**", "use": "@vercel/static" },
+    { "src": "assets/**", "use": "@vercel/static" },
+    { "src": "*.css", "use": "@vercel/static" },
+    { "src": "*.js", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/api/(.*)", "dest": "/conexion.js" },
+
+  
+    { "src": "/(.*\\.(?:js|css|png|jpg|jpeg|svg|ico|map))", "dest": "/$1" },
+    { "src": "/app/(.*)", "dest": "/app/$1" },
+    { "src": "/assets/(.*)", "dest": "/assets/$1" },
+
+   
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
